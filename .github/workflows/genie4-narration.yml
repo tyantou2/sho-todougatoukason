@@ -1,0 +1,28 @@
+name: Genie 4 narration render
+on:
+  push:
+    paths:
+      - 'data/20261102_genie4_dialogue.json'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  narration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Launch VOICEVOX
+        run: |
+          docker pull voicevox/voicevox_engine:cpu-latest
+          docker run -d --rm --name voicevox -p 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-latest
+      - name: Render 11 November 2 dialogue scenes
+        run: python3 scripts/render_genie4_narration.py data/20261102_genie4_dialogue.json out
+      - name: Save audio, timing report, and per-line WAVs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: genie4-voicevox-narration
+          path: out/
+          if-no-files-found: warn
+          retention-days: 14
