@@ -1,0 +1,85 @@
+{
+  "date": "2026-11-02",
+  "title": "Genie 4",
+  "duration_seconds": 57,
+  "lines": [
+    {
+      "speaker": "momokage",
+      "text": "これ、動画じゃない。中を歩けるAIの世界!?",
+      "start": 0,
+      "end": 3
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "えっ、しかも音が鳴るの!?",
+      "start": 3,
+      "end": 7
+    },
+    {
+      "speaker": "momokage",
+      "text": "Googleが10月27日に発表した、Genie 4だ。",
+      "start": 7,
+      "end": 12
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "文章や画像から、世界を作っちゃうの？",
+      "start": 12,
+      "end": 17
+    },
+    {
+      "speaker": "momokage",
+      "text": "しかも、キーボードで中を移動できる！",
+      "start": 17,
+      "end": 22
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "じゃあ、雪を降らせてって言ったら？",
+      "start": 22,
+      "end": 27
+    },
+    {
+      "speaker": "momokage",
+      "text": "天気も変わるし、人や物も追加できる！",
+      "start": 27,
+      "end": 32
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "風の音や、キャラの会話も？",
+      "start": 32,
+      "end": 37
+    },
+    {
+      "speaker": "momokage",
+      "text": "そう。音も世界と一緒にリアルタイム生成！",
+      "start": 37,
+      "end": 42
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "じゃあ、ぼくも今すぐ遊べる？",
+      "start": 42,
+      "end": 47
+    },
+    {
+      "speaker": "momokage",
+      "text": "残念、今は一部のテスターだけ。一般公開はこれから。",
+      "start": 47,
+      "end": 52
+    },
+    {
+      "speaker": "momokage",
+      "text": "じゃあ、えびめしが降る世界を考えるぞ！",
+      "start": 52,
+      "end": 55
+    },
+    {
+      "speaker": "momonosuke",
+      "text": "傘じゃなくてお皿だね！",
+      "start": 55,
+      "end": 57
+    }
+  ]
+}
