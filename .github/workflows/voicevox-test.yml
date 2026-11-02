@@ -1,0 +1,33 @@
+name: VOICEVOX audio pipeline test
+on:
+  workflow_dispatch:
+    inputs:
+      text:
+        description: "Test phrase (no personal information)"
+        required: false
+        default: "こんにちは。桃下村塾の音声テストです。"
+permissions:
+  contents: read
+jobs:
+  voicevox:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start official VOICEVOX Engine (CPU)
+        run: |
+          docker pull voicevox/voicevox_engine:cpu-latest
+          docker run -d --rm --name voicevox -p 127.0.0.1:50021:50021 voicevox/voicevox_engine:cpu-latest
+      - name: Wait for API and synthesize both official character voices
+        env:
+          TEST_TEXT: ${{ inputs.text }}
+        run: |
+          python3 scripts/voicevox_test.py --text "$TEST_TEXT" --output-dir out
+      - name: Upload test audio and speaker report (not a finished video)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: voicevox-test-output
+          path: out/
+          if-no-files-found: warn
+          retention-days: 7
